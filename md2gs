@@ -62,7 +62,7 @@ help(){
   echo
   echo "Here is the full md2gslides help (just remember to replace md2gslides with md2gs to use it) :"
   echo
-  exec docker run -it $DOCKER_IMAGE --help
+  exec docker run --rm -it $DOCKER_IMAGE --help
 }
 
 # Checks for dependencies
