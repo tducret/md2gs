@@ -3,7 +3,7 @@
 # A wrapper script for invoking a docker container
 # Based on https://spin.atomicobject.com/2015/11/30/command-line-tools-docker/
 
-DOCKER_IMAGE="md2gs"
+DOCKER_IMAGE="thibdct/md2gs"
 LOCAL_CREDENTIAL_FILE_PATH="$HOME/.credentials/md2gslides.json"
 
 error(){

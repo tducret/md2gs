@@ -8,7 +8,7 @@ echo "Moving md2gs to /usr/local/bin and making it executable..."
 mv md2gs /usr/local/bin
 chmod +x /usr/local/bin/md2gs
 echo "Pulling the md2gs Docker image if not present..."
-docker pull md2gs
+docker pull thibdct/md2gs
 echo
 echo "=== End of installation ==="
 echo
