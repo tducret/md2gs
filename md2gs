@@ -43,10 +43,10 @@ upgrade(){
   exit 1
 }
 uninstall(){
-  read -p "Are you sure to uninstall (y/n)? " -r
+  echo -n "Are you sure to uninstall (y/n)? "
+  read REPLY
   echo
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
+  if [ "$REPLY" != "${REPLY#[Yy]}" ]; then
     docker rmi $DOCKER_IMAGE
     rm $0
   fi
