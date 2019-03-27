@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCRIPT_INSTALLATION_PATH="/usr/bin"
+SCRIPT_INSTALLATION_PATH="/usr/local/bin"
 
 echo "=== Installation of md2gs ==="
 echo
@@ -12,7 +12,8 @@ echo "Moving md2gs to ${SCRIPT_INSTALLATION_PATH}..."
 if [ ! -w ${SCRIPT_INSTALLATION_PATH} ]; then
 	echo
 	echo "Warning: Cannot write in ${SCRIPT_INSTALLATION_PATH} with the current user"
-	read -p "Press the return key to continue as sudo (or Ctrl+C to cancel installation)" -r
+	echo "Press the return key to continue as sudo (or Ctrl+C to cancel installation)"
+	read answer
 	sudo mv md2gs ${SCRIPT_INSTALLATION_PATH}
 else
 	mv md2gs ${SCRIPT_INSTALLATION_PATH}
