@@ -12,5 +12,6 @@ docker pull md2gs
 echo
 echo "=== End of installation ==="
 echo
-echo "=== Usage (md2gs -h) ==="
-md2gs --help
+echo "usage: md2gs --title \"Greatest presentation ever\" path/to/my_presentation.md"
+echo
+echo "For more information: md2gs --help"
