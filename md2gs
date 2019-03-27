@@ -52,28 +52,39 @@ uninstall(){
   fi
   exit 1
 }
+help(){
+  echo "md2gs is a Docker container embedding md2gslides (a cool program to convert a Markdown file to Google slides)"
+  echo "More information on https://github.com/gsuitedevs/md2googleslides"
+  echo "usage: md2gs --title \"Greatest presentation ever\" path/to/my_presentation.md"
+  echo
+  echo " To upgrade md2gs to the latest version: md2gs --upgrade"
+  echo " To remove the Docker image and delete md2gs script: md2gs --uninstall"
+  echo
+  echo "Here is the full md2gslides help (just remember to replace md2gslides with md2gs to use it) :"
+  echo
+  exec docker run -it $DOCKER_IMAGE --help
+}
 
 # Checks for dependencies
 check_cmd_in_path docker
 
+if [ "$#" -eq 0 ]; then
+  echo "Error: you must add the path of a markdown presentation file"
+  echo
+  help
+  exit 2
+fi
+
 case $1 in
-    --uninstall)
-    uninstall
-    ;;
-    --upgrade)
-    upgrade
-    ;;
-    -h|--help)
-    echo "md2gs is a Docker container embedding md2gslides (a cool program to convert a Markdown file to Google slides)"
-    echo "More information on https://github.com/gsuitedevs/md2googleslides"
-    echo "usage: md2gs --title \"Greatest presentation ever\" path/to/my_presentation.md"
-    echo
-    echo " To upgrade md2gs to the latest version: md2gs --upgrade"
-    echo " To remove the Docker image and delete md2gs script: md2gs --uninstall"
-    echo
-    echo "Here is the full md2gslides help :"
-    exec docker run -it $DOCKER_IMAGE --help
-    ;;
+  --uninstall)
+  uninstall
+  ;;
+  --upgrade)
+  upgrade
+  ;;
+  -h|--help)
+  help
+  ;;
 esac
 
 LAST_CMD_PARAM="${@: -1}"
