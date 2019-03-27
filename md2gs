@@ -48,7 +48,14 @@ uninstall(){
   echo
   if [ "$REPLY" != "${REPLY#[Yy]}" ]; then
     docker rmi $DOCKER_IMAGE
-    rm $0
+    if [ -w $0 ] && [ -w "$(dirname $0)" ]; then
+      rm $0
+    else
+      echo
+      echo "Warning: Cannot delete $0 with the current user"
+      echo "Enter your password to delete it as sudo (or Ctrl+C to cancel)"
+      sudo rm $0
+    fi
   fi
   exit 1
 }
