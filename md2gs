@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A wrapper script for invoking a docker container
 # Based on https://spin.atomicobject.com/2015/11/30/command-line-tools-docker/
