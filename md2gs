@@ -43,7 +43,7 @@ upgrade(){
   exit 1
 }
 uninstall(){
-  read -p "Are you sure to uninstall (y/n)? " -n 1 -r
+  read -p "Are you sure to uninstall (y/n)? " -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
