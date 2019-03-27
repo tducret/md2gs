@@ -99,4 +99,4 @@ PRESENTATION_HOST_DIR=$(get_absolute_path ${LAST_CMD_PARAM}) # Absolute path nee
 create_file_if_not_existing $LOCAL_CREDENTIAL_FILE_PATH
 
 # Run our containerized command
-exec docker run -it -v ${LOCAL_CREDENTIAL_FILE_PATH}:/home/.credentials/md2gslides.json -v $PRESENTATION_HOST_DIR:/presentation/ $DOCKER_IMAGE -n "$@" /presentation/$PRESENTATION_FILENAME
+exec docker run --rm -it -v ${LOCAL_CREDENTIAL_FILE_PATH}:/home/.credentials/md2gslides.json -v $PRESENTATION_HOST_DIR:/presentation/ $DOCKER_IMAGE -n "$@" /presentation/$PRESENTATION_FILENAME
