@@ -39,8 +39,8 @@ get_absolute_path()
   echo `cd "${REL_DIRNAME}"; pwd`
 }
 upgrade(){
-  docker pull $DOCKER_IMAGE
-  exit 1
+  curl -fsSL https://raw.githubusercontent.com/tducret/md2gs/master/get-md2gs.sh | sh
+  exit 0
 }
 uninstall(){
   echo -n "Are you sure to uninstall (y/n)? "
