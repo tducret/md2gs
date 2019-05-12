@@ -7,7 +7,7 @@ FROM node:8.15.0 AS build-env
 
 WORKDIR /app
 
-RUN npm install md2gslides -g --prefix /app --unsafe
+RUN npm install md2gslides@0.5.0 -g --prefix /app --unsafe
 
 FROM gcr.io/distroless/nodejs
 

@@ -70,6 +70,12 @@ help(){
   echo "Here is the full md2gslides help (just remember to replace md2gslides with md2gs to use it) :"
   echo
   exec docker run --rm -it $DOCKER_IMAGE --help
+  exit 0
+}
+
+version(){
+  echo "md2gs uses npm package md2gslides@0.5.0"
+  exit 0
 }
 
 # Checks for dependencies
@@ -91,6 +97,9 @@ case $1 in
   ;;
   -h|--help)
   help
+  ;;
+  -v|--version)
+  version
   ;;
 esac
 
