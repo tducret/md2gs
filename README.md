@@ -10,6 +10,8 @@
 
 All you need is **bash and Docker 👍**
 
+I wrote a French blog post about it [here](https://www.tducret.com/presentation/2019/05/12/creer-un-powerpoint-en-markdown.html)
+
 ## Installation
 
 ```bash
